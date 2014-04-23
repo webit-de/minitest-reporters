@@ -157,12 +157,12 @@ module Minitest
 
         if test.skipped?
           if @detailed_skip
-            "Skipped:\n#{test.class}##{test.name} [#{location(e)}]:\n#{e.message}"
+            "Skipped:\n#{test.name} [#{location(e)}]:\n#{e.message}"
           end
         elsif test.error?
-          "Error:\n#{test.class}##{test.name}:\n#{e.message}"
+          "Error:\n#{test.name}:\n#{e.message}"
         else
-          "Failure:\n#{test.class}##{test.name}:\n#{e.class}: #{e.message}"
+          "Failure:\n#{test.name}: [#{location(e)}]\n#{e.class}: #{e.message}"
         end
       end
 
